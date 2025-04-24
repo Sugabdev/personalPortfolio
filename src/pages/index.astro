@@ -2,11 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro'
 import Cover from '../components/Cover.astro'
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Personal Portfolio">
+<Layout>
 	<Header />
 	<main class="h-full flex flex-col justify-center items-center">
 		<Cover />
+		<section>Yo voy a ser el contenido de esta vaina</section>
 	</main>
+	<Footer/>
 </Layout>

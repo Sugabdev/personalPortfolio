@@ -2,8 +2,6 @@
 // Supports weights 100-900
 import '@fontsource-variable/league-spartan';
 import './src/styles/global.css'
-
-const { title } = Astro.props
 ---
 
 <!doctype html>
@@ -13,7 +11,7 @@ const { title } = Astro.props
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>Personal Portfolio</title>
 	</head>
 	<body>
 		<slot />
@@ -26,12 +24,6 @@ const { title } = Astro.props
 		margin: 0;
 		width: 100%;
 		height: 100%;
-		color: #fff;
-		background-image: url('src/assets/background.svg');
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-position: center;
   		font-family: 'League Spartan Variable', sans-serif;
 	}
 </style>
