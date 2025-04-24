@@ -18,6 +18,6 @@ Puedes ver el portafolio en línea aquí: [https://tuusuario.github.io/](https:/
 ## 🛠️ Tecnologías utilizadas
 
 - HTML5 y CSS3
-- JavaScript
+- JavaScript/Typescript
 - Astro 5
 - Tailwindcss
