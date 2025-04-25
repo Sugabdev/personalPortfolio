@@ -1,0 +1,53 @@
+<section
+    class="w-full flex flex-row items-start justify-center gap-12 bg-cover bg-no-repeat bg-center bg-fixed py-8 text-white"
+    style="background-image: url('public/background.svg')"
+>
+    <aside class="flex flex-col justify-center items-center gap-6">
+        <h1 class="text-5xl">¿Algún proyecto en <span class="block"><span class="text-cyan-400 font-semibold">mente?</span>☁️</span></h1>
+        <img
+            src="public/contact/contact_01.svg"
+            alt="Imágen de receptiva a nuevos proyectos"
+            class="max-w-3xs"
+        >
+    </aside>
+    <form action="" method="post">
+        <fieldset class="min-w-xs flex flex-col justify-center items-start gap-4">
+        <label for="name" class="w-full flex flex-col gap-1">
+            <span class="font-semibold">Nombre</span>
+            <input
+                type="text"
+                id="name"
+                placeholder="Ingresa tu nombre..."
+                class="bg-white text-gray-900 px-4 py-2 rounded-md"
+            >
+        </label>
+        <label for="mail" class="w-full flex flex-col gap-1">
+            <span class="font-semibold">Email</span>
+            <input
+                type="email"
+                id="mail"
+                placeholder="Ingresa tu email..."
+                required
+                class="bg-white text-gray-900 px-4 py-2 rounded-md"
+            >
+        </label>
+        <label for="message" class="w-full flex flex-col gap-1">
+            <span class="font-semibold">Mensaje</span>
+            <textarea
+                name="message"
+                rows="6"
+                placeholder="Ingresa tu mensaje..."
+                required
+                class="bg-white text-gray-900 p-4 rounded-md"
+            ></textarea>
+        </label>
+        <button
+            type="submit"
+            class="w-full flex flex-row justify-center items-end gap-2 bg-blue-900 text-white border-[1px] border-transparent rounded-md py-4 px-4 transform hover:border-cyan-600 hover:shadow-xs hover:shadow-cyan-500"
+        >
+            Enviar
+            <img src="public/contact/send-white.svg" alt="Send icon" class="max-w-4">
+        </button>
+        </fieldset>
+    </form>
+</section>

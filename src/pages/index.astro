@@ -2,14 +2,23 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro'
 import Cover from '../components/Cover.astro'
+import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
-	<Header />
-	<main class="h-full flex flex-col justify-center items-center">
-		<Cover />
-		<section>Yo voy a ser el contenido de esta vaina</section>
+	<main class="h-full flex flex-col justify-center items-center leading-none">
+		<section
+			class="size-full flex flex-col gap-8 justify-center items-center bg-cover bg-no-repeat bg-center bg-fixed"
+			style="background-image: url('public/background.svg')"
+		>
+			<Header />
+			<Cover />
+		</section>
+		<section>
+			<h1>Aqui va a ir alguna zona con fondo claro</h1>
+		</section>
+		<Contact/>
 	</main>
 	<Footer/>
 </Layout>
