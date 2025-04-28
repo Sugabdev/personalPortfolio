@@ -1,9 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro'
-import Cover from '../components/Cover.astro'
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Cover from "../components/Cover.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import RecentWorks from "../components/RecentWorks.astro";
 ---
 
 <Layout>
@@ -15,10 +16,8 @@ import Footer from '../components/Footer.astro';
 			<Header />
 			<Cover />
 		</section>
-		<section>
-			<h1>Aqui va a ir alguna zona con fondo claro</h1>
-		</section>
-		<Contact/>
+		<RecentWorks />
+		<Contact />
 	</main>
-	<Footer/>
+	<Footer />
 </Layout>

@@ -1,0 +1,36 @@
+---
+const works = [
+    {
+        Job: "Analísta de Sistemas y Tecnología",
+        Company: "Balanceados El Morro, C.A. (VE)",
+        Duration: "2023 - 2024",
+        Description:
+            "Entre mis principales funciones se destacaban el dar soporte a los usuarios con equipos de ofimática y cualquier software que utilizaran en su día a día. Monitorear y dar soporte a la red empresarial. Dar soporte a las cámaras de seguridad. El desarrollo de aplicaciones de escritorio.",
+    },
+    {
+        Job: "Tecnólogo en Electrónica",
+        Company: "Alcaldía del Municipio Diego Bautista Urbaneja",
+        Duration: "2022",
+        Description:
+            "Mantenimiento e inventario de fuentes de poder de computadores, análisis de su estado y condición.",
+    },
+];
+---
+
+<section
+    class="w-full bg-[#fff7ed] flex flex-col items-center gap-8 py-16 text-2xl text-gray-800"
+>
+    <h1 class="text-6xl">Trabajos Recientes</h1>
+    {
+        works.map(({ Job, Company, Duration, Description }) => (
+            <article class="max-w-2xl flex flex-col gap-4">
+                <div>
+                    <h2 class="opacity-60">{Duration}</h2>
+                    <h1 class="text-4xl font-semibold">{Job}</h1>
+                    <h3 class="opacity-80">{Company}</h3>
+                </div>
+                <p>{Description}</p>
+            </article>
+        ))
+    }
+</section>
