@@ -1,3 +1,49 @@
+---
+const navLinks = [
+    {
+        Text: "Inicio",
+        Icon: "public/footer/house.svg",
+        Description: "Ícono de una casa para el nav del inicio",
+    },
+    {
+        Text: "Proyectos",
+        Icon: "public/footer/briefcase-business.svg",
+        Description: "Ícono de maletín ce trabajo para el nav de proyectos",
+    },
+    {
+        Text: "Trabajos recientes",
+        Icon: "public/footer/monitor-smartphone.svg",
+        Description:
+            "Ícono de una computadora para el nav de Trabajos Recientes",
+    },
+    {
+        Text: "Sobre mí",
+        Icon: "public/footer/user.svg",
+        Description: "Ícono de avatar para el nav de Sobre mí",
+    },
+    {
+        Text: "Contácto",
+        Icon: "public/footer/phone.svg",
+        Description: "Ícono de un teléfono para el nav de Contácto",
+    },
+];
+
+const socialLinks = [
+    {
+        Icon: "public/footer/github-filled-rounded.svg",
+        Network: "Github",
+    },
+    {
+        Icon: "public/footer/linkedin-filled.svg",
+        Network: "LinkedIn",
+    },
+    {
+        Icon: "public/footer/gmail.svg",
+        Network: "Gmail",
+    },
+];
+---
+
 <footer
     class="w-full flex flex-col justify-center items-center bg-cover bg-no-repeat bg-center bg-fixed text-white"
     style="background-image: url('public/background.svg')"
@@ -5,73 +51,34 @@
     <section class="flex flex-col items-center">
         <nav class="border-t-[1px] border-gray-100 p-8">
             <ul class="flex flex-row justify-center items-center gap-8">
-                <li class="flex flex-row gap-1 justify-center">
-                    <img
-                        src="public/footer/house.svg"
-                        alt="Ícono de home para el nav del inicio"
-                        class="max-w-4"
-                    />
-                    <a href="#" class="text-[1.2rem] font-semibold leading-none h-full">Inicio</a>
-                </li>
-                <li class="flex flex-row gap-1 justify-center">
-                    <img
-                        src="public/footer/briefcase-business.svg"
-                        alt="Ícono de un maletín para el nav de Proyectos"
-                        class="max-w-4"
-                    />
-                    <a href="#" class="text-[1.2rem] font-semibold leading-none h-full">Proyectos</a>
-                </li>
-                <li class="flex flex-row gap-1 justify-center">
-                    <img
-                        src="public/footer/monitor-smartphone.svg"
-                        alt="Ícono de una estación de trabajo para el nav de Trabajos recientes"
-                        class="max-w-4"
-                    />
-                    <a href="#" class="text-[1.2rem] font-semibold leading-none h-full">Trabajos recientes</a>
-                </li>
-                <li class="flex flex-row gap-1 justify-center">
-                    <img
-                        src="public/footer/user.svg"
-                        alt="Ícono de un avatar de perfil para el nav de Sobre mí"
-                        class="max-w-4"
-                    />
-                    <a href="#" class="text-[1.2rem] font-semibold leading-none h-full">Sobre mí</a>
-                </li>
-                <li class="flex flex-row gap-1 justify-center">
-                    <img
-                        src="public/footer/phone.svg"
-                        alt="Ícono de un teléfono para el nav de Contácto"
-                        class="max-w-4"
-                    />
-                    <a href="#" class="text-[1.2rem] font-semibold leading-none h-full">Contácto</a>
-                </li>
+                {
+                    navLinks.map(({ Text, Icon, Description }) => (
+                        <li class="flex flex-row gap-1 justify-center">
+                            <img src={Icon} alt={Description} class="max-w-4" />
+                            <a
+                                href="#"
+                                class="text-[1.2rem] font-semibold leading-none h-full"
+                            >
+                                {Text}
+                            </a>
+                        </li>
+                    ))
+                }
             </ul>
         </nav>
         <nav class="border-t-[1px] border-gray-100 p-8">
             <ul class="flex flex-row gap-8">
-                <li>
-                    <img
-                        src="public/footer/github-filled-rounded.svg"
-                        alt="Github"
-                        class="size-16"
-                    />
-                </li>
-                <li>
-                    <img
-                        src="public/footer/linkedin-filled.svg"
-                        alt="Linkedin"
-                        class="size-16"
-                    />
-                </li>
-                <li>
-                    <img
-                        src="public/footer/gmail.svg"
-                        alt="Gmail"
-                        class="size-16 scale-[1.1]"
-                    />
-                </li>
+                {
+                    socialLinks.map(({ Icon, Network }) => (
+                        <li>
+                            <img src={Icon} alt={Network} class="size-16" />
+                        </li>
+                    ))
+                }
             </ul>
         </nav>
     </section>
-    <section class="w-full font-semibold py-4 bg-rose-950 text-center text-lg"><p>2025 Copyright. Todos los derechos reservados.</p></section>
+    <section class="w-full font-semibold py-4 bg-rose-950 text-center text-lg">
+        <p>2025 Copyright. Todos los derechos reservados.</p>
+    </section>
 </footer>

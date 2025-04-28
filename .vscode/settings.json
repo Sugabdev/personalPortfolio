@@ -4,5 +4,6 @@
     "oneDarkPro.bold": true,
     "oneDarkPro.vivid": true,
     "editor.fontLigatures": true,
-    "standard.autoFixOnSave": true
+    "standard.autoFixOnSave": true,
+    "standard.engine": "ts-standard"
 }
