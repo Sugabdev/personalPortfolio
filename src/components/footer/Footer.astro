@@ -1,4 +1,7 @@
 ---
+import GithubIcon from "./icons/GithubIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
+
 const navLinks = [
     {
         Text: "Inicio",
@@ -32,21 +35,6 @@ const navLinks = [
         link: "#contact-section",
     },
 ];
-
-const socialLinks = [
-    {
-        Icon: "public/footer/github-filled-rounded.svg",
-        Network: "Github",
-    },
-    {
-        Icon: "public/footer/linkedin-filled.svg",
-        Network: "LinkedIn",
-    },
-    {
-        Icon: "public/footer/gmail.svg",
-        Network: "Gmail",
-    },
-];
 ---
 
 <footer
@@ -74,14 +62,21 @@ const socialLinks = [
             </ul>
         </nav>
         <nav class="border-t-[1px] border-gray-100 p-8">
-            <ul class="flex flex-row gap-8">
-                {
-                    socialLinks.map(({ Icon, Network }) => (
-                        <li>
-                            <img src={Icon} alt={Network} class="size-16" />
-                        </li>
-                    ))
-                }
+            <ul class="flex flex-row gap-4">
+                <li>
+                    <a href="https://github.com/Sugabdev">
+                        <GithubIcon
+                            class="size-6 hover:text-cyan-500 hover:scale-110 transition-all duration-200"
+                        />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/sugabdev/">
+                        <LinkedinIcon
+                            class="size-6 hover:text-cyan-500 hover:scale-110 transition-all duration-200"
+                        />
+                    </a>
+                </li>
             </ul>
         </nav>
     </section>
