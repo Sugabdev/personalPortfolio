@@ -1,0 +1,19 @@
+---
+import Navtag from "./Navtag.astro";
+import MobileMenu from "./MobileMenu.astro";
+---
+
+<header
+    class="min-w-full flex justify-end md:justify-center text-yellow-50 py-4 md:py-0"
+>
+    <nav
+        class="hidden md:flex flex-row gap-10 px-12 bg-rose-900 rounded-b-2xl text-2xl shadow-2xl shadow-rose-950"
+    >
+        <Navtag>Inicio</Navtag>
+        <Navtag>Proyectos</Navtag>
+        <Navtag>Trabajos recientes</Navtag>
+        <Navtag>Sobre mí</Navtag>
+        <Navtag>Contácto</Navtag>
+    </nav>
+    <MobileMenu />
+</header>

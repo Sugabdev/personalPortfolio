@@ -1,0 +1,115 @@
+---
+import Menu from "./Menu.astro";
+import CloseMenu from "./CloseMenu.astro";
+import Navtag from "./Navtag.astro";
+---
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const drawerButton = document.getElementById("mobile-menu-button");
+        const drawer = document.getElementById("mobile-menu");
+        const closeDrawerButton = drawer?.querySelector("[data-drawer-hide]");
+        const dropdownToggle = drawer?.querySelector("[data-collapse-toggle]");
+        const dropdownMenu = drawer?.querySelector("#dropdown-example");
+
+        // Abrir drawer
+        drawerButton?.addEventListener("click", () => {
+            if (drawer) {
+                drawer.classList.remove("-translate-x-full");
+            }
+        });
+
+        // Cerrar drawer
+        closeDrawerButton?.addEventListener("click", () => {
+            if (drawer) {
+                drawer.classList.add("-translate-x-full");
+            }
+        });
+
+        // Toggle del dropdown
+        dropdownToggle?.addEventListener("click", () => {
+            dropdownMenu?.classList.toggle("hidden");
+        });
+
+        // Cerrar drawer si se hace clic fuera (opcional)
+        document.addEventListener("click", (e) => {
+            if (
+                drawer &&
+                !drawer.contains(e.target as Node) &&
+                !drawerButton?.contains(e.target as Node)
+            ) {
+                drawer.classList.add("-translate-x-full");
+            }
+        });
+    });
+</script>
+<section
+    class="w-full flex flex-row justify-between items-center leading-0 md:hidden"
+>
+    <h1 class="font-semibold text-2xl leading-0 text-orange-300">
+        JESÚS QUIÑONES
+    </h1>
+    <div class="text-center md:hidden">
+        <button
+            id="mobile-menu-button"
+            type="button"
+            data-drawer-target="drawer-navigation"
+            data-drawer-show="drawer-navigation"
+            aria-controls="drawer-navigation"
+        >
+            <Menu />
+        </button>
+    </div>
+
+    <div
+        id="mobile-menu"
+        class="fixed top-0 left-0 z-40 h-screen p-4 transition-transform -translate-x-full bg-white w-64 dark:bg-gray-800"
+        tabindex="-1"
+        aria-labelledby="drawer-navigation-label"
+    >
+        <h5
+            id="drawer-navigation-label"
+            class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
+        >
+            Menu
+        </h5>
+        <button
+            type="button"
+            data-drawer-hide="drawer-navigation"
+            aria-controls="drawer-navigation"
+            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
+        >
+            <CloseMenu class="size-4" />
+            <span class="sr-only">Close menu</span>
+        </button>
+        <div>
+            <ul class="py-24 font-medium flex flex-col gap-4">
+                <li
+                    class="py-6 px-2 hover:bg-gray-300 hover:text-gray-800 rounded-lg"
+                >
+                    <Navtag>Inicio</Navtag>
+                </li>
+                <li
+                    class="py-6 px-2 hover:bg-gray-300 hover:text-gray-800 rounded-lg"
+                >
+                    <Navtag>Proyectos</Navtag>
+                </li>
+                <li
+                    class="py-6 px-2 hover:bg-gray-300 hover:text-gray-800 rounded-lg"
+                >
+                    <Navtag>Trabajos recientes</Navtag>
+                </li>
+                <li
+                    class="py-6 px-2 hover:bg-gray-300 hover:text-gray-800 rounded-lg"
+                >
+                    <Navtag>Sobre mí</Navtag>
+                </li>
+                <li
+                    class="py-6 px-2 hover:bg-gray-300 hover:text-gray-800 rounded-lg"
+                >
+                    <Navtag>Contácto</Navtag>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
