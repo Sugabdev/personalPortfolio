@@ -4,27 +4,32 @@ const navLinks = [
         Text: "Inicio",
         Icon: "public/footer/house.svg",
         Description: "Ícono de una casa para el nav del inicio",
-    },
-    {
-        Text: "Proyectos",
-        Icon: "public/footer/briefcase-business.svg",
-        Description: "Ícono de maletín ce trabajo para el nav de proyectos",
+        link: "#cover-section",
     },
     {
         Text: "Trabajos recientes",
         Icon: "public/footer/monitor-smartphone.svg",
         Description:
             "Ícono de una computadora para el nav de Trabajos Recientes",
+        link: "#work-section",
+    },
+    {
+        Text: "Proyectos",
+        Icon: "public/footer/briefcase-business.svg",
+        Description: "Ícono de maletín ce trabajo para el nav de proyectos",
+        link: "#projects-section",
     },
     {
         Text: "Sobre mí",
         Icon: "public/footer/user.svg",
         Description: "Ícono de avatar para el nav de Sobre mí",
+        link: "#about-section",
     },
     {
         Text: "Contácto",
         Icon: "public/footer/phone.svg",
         Description: "Ícono de un teléfono para el nav de Contácto",
+        link: "#contact-section",
     },
 ];
 
@@ -54,11 +59,11 @@ const socialLinks = [
                 class="flex flex-col md:flex-row justify-center items-center gap-8"
             >
                 {
-                    navLinks.map(({ Text, Icon, Description }) => (
+                    navLinks.map(({ Text, Icon, Description, link }) => (
                         <li class="flex flex-row gap-1 justify-center">
                             <img src={Icon} alt={Description} class="max-w-4" />
                             <a
-                                href="#"
+                                href={link}
                                 class="text-[1.2rem] font-semibold leading-none h-full"
                             >
                                 {Text}

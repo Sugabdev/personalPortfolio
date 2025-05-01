@@ -1,3 +1,7 @@
-<a href="#" class="md:p-4 md:hover:underline md:transition-all">
+---
+const { link } = Astro.props;
+---
+
+<a href={link} class="md:p-4 md:hover:underline md:transition-all">
     <slot />
 </a>
