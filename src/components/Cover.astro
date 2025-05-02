@@ -1,26 +1,43 @@
+---
+const socialLinks = [
+    {
+        Url: "https://www.linkedin.com/in/sugabdev/",
+        Icon: "public/cover/linkedin-white.svg",
+        Description: "Linked in logo to redirect to my linkedin profile",
+    },
+    {
+        Url: "https://github.com/Sugabdev",
+        Icon: "public/cover/github-white.svg",
+        Description: "Github logo to redirect to my Github profile",
+    },
+];
+---
+
 <section
-    class="flex flex-col justify-center items-center gap-12 text-yellow-50 md:flex-1 md:flex-row"
+    class="h-full flex flex-col justify-center items-center gap-12 text-yellow-50 md:gap-8 md:flex-1 md:flex-row md:justify-center"
 >
-    <aside class="flex flex-col justify-center items-center md:items-start">
-        <h1 class="hidden text-4xl mb-12 font-semi md:inline">
-            <span class="text-orange-300">Jesús Quiñones</span> | <span
-                class="text-rose-200">Desarrollador Web</span
+    <div
+        class="flex flex-col justify-center items-center gap-y-4 px-8 md:gap-y-10 md:items-start md:p-0"
+    >
+        <!-- Laptop/Desktop -->
+        <div class="hidden text-4xl font-semi md:flex flex-row gap-x-4">
+            <h1 class="text-orange-300">Jesús Quiñones</h1>
+            <span>|</span>
+            <h2 class="text-rose-300">Desarrollador Web</h2>
+        </div>
+        <!-- Mobile -->
+        <div class="md:hidden flex flex-col gap-4">
+            <h1 class="block text-center text-2xl font-semibold">
+                ¡Hola!👋🏻<span class="block">Soy Jesús Quiñones</span>
+            </h1>
+            <h2
+                class="block text-center text-3xl text-orange-400 font-semibold"
             >
-        </h1>
-        <p class="mb-8 md:hidden">
-            <span class="block text-center text-4xl font-semibold">
-                ¡Hola!👋🏻
-            </span>
-            <span class="block text-center text-4xl font-semibold mb-4">
-                Soy Jesús Quiñones
-            </span>
-            <span
-                class="block text-center text-6xl text-orange-400 font-semibold"
-                >Desarrollador Web</span
-            >
-        </p>
+                Desarrollador Web
+            </h2>
+        </div>
         <article
-            class="text-2xl text-center md:text-left md:font-normal leading-7 md:leading-none"
+            class="text-xl text-center md:text-left md:font-normal leading-6"
         >
             <p>Creo aplicaciones web utilizando un stack tecnológico</p>
             <p>
@@ -29,37 +46,31 @@
                 > y algo de <span class="text-sky-600 font-bold">python</span>.
             </p>
             <p class="text-white">
-                De <span class="text-indigo-300">Lecheria</span>,<span
+                De <span class="text-indigo-300">Lecheria</span>, <span
                     class="text-rose-500 text-bold">Venezuela</span
                 >.
             </p>
         </article>
-        <nav class="flex flex-row items-center gap-8 mt-12">
-            <a
-                href="https://www.linkedin.com/in/sugabdev/"
-                class="hover:scale-120 transition"
-            >
-                <img
-                    src="public/cover/linkedin-white.svg"
-                    alt="Linked in logo to redirect to my linkedin profile"
-                    class="max-w-16"
-                />
-            </a>
-            <a
-                href="https://github.com/Sugabdev"
-                class="hover:scale-120 transition"
-            >
-                <img
-                    src="public/cover/github-white.svg"
-                    alt="Github logo to redirect to my Github profile"
-                    class="max-w-16 scale-[1.2]"
-                />
-            </a>
+        <nav
+            aria-label="Redes sociales"
+            class="flex flex-row items-center gap-x-6"
+        >
+            {
+                socialLinks.map(({ Url, Icon, Description }) => (
+                    <a href={Url} class="hover:scale-120 transition">
+                        <img
+                            src={Icon}
+                            alt={Description}
+                            class="w-12 md:w-16"
+                        />
+                    </a>
+                ))
+            }
         </nav>
-    </aside>
+    </div>
     <img
         src="public/cover/avatar-profile.svg"
-        alt="Profile picture"
-        class="rounded-full size-60 md:size-80 bg-white"
+        alt="Jesús Quiñones Profile picture"
+        class="rounded-full w-[50%] md:w-64 bg-white"
     />
 </section>
