@@ -1,16 +1,8 @@
 ---
-const socialLinks = [
-    {
-        Url: "https://www.linkedin.com/in/sugabdev/",
-        Icon: "public/cover/linkedin-white.svg",
-        Description: "Linked in logo to redirect to my linkedin profile",
-    },
-    {
-        Url: "https://github.com/Sugabdev",
-        Icon: "public/cover/github-white.svg",
-        Description: "Github logo to redirect to my Github profile",
-    },
-];
+import { Image } from "astro:assets";
+import avatar from "../../assets/images/cover/profile_picture.jpg";
+import GithubIcon from "./icons/GithubIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
 ---
 
 <section
@@ -55,22 +47,25 @@ const socialLinks = [
             aria-label="Redes sociales"
             class="flex flex-row items-center gap-x-6"
         >
-            {
-                socialLinks.map(({ Url, Icon, Description }) => (
-                    <a href={Url} class="hover:scale-120 transition">
-                        <img
-                            src={Icon}
-                            alt={Description}
-                            class="w-12 md:w-16"
-                        />
-                    </a>
-                ))
-            }
+            <a
+                href="https://www.linkedin.com/in/sugabdev/"
+                class="hover:scale-120 transition"
+                aria-label="Linked in logo to redirect to my linkedin profile"
+            >
+                <LinkedinIcon class="size-12 md:size-16" />
+            </a>
+            <a
+                href="https://github.com/Sugabdev"
+                class="hover:scale-120 transition"
+                aria-label="Github logo to redirect to my Github profile"
+            >
+                <GithubIcon class="size-12 md:size-16" />
+            </a>
         </nav>
     </div>
-    <img
-        src="public/cover/avatar-profile.svg"
-        alt="Jesús Quiñones Profile picture"
-        class="rounded-full w-[50%] md:w-64 bg-white"
+    <Image
+        src={avatar}
+        alt="Jesús Quiñones"
+        class="rounded-full w-[40%] md:w-64 bg-white"
     />
 </section>

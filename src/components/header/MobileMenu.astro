@@ -1,6 +1,6 @@
 ---
-import Menu from "./Menu.astro";
-import CloseMenu from "./CloseMenu.astro";
+import MenuIcon from "./icons/MenuIcon.astro";
+import CloseMenuIcon from "./icons/CloseMenuIcon.astro";
 import Navtag from "./Navtag.astro";
 ---
 
@@ -57,7 +57,7 @@ import Navtag from "./Navtag.astro";
             data-drawer-show="drawer-navigation"
             aria-controls="drawer-navigation"
         >
-            <Menu />
+            <MenuIcon />
         </button>
     </div>
 
@@ -79,7 +79,7 @@ import Navtag from "./Navtag.astro";
             aria-controls="drawer-navigation"
             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
         >
-            <CloseMenu class="size-4" />
+            <CloseMenuIcon class="size-4" />
             <span class="sr-only">Close menu</span>
         </button>
         <div>

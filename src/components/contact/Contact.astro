@@ -1,3 +1,8 @@
+---
+import ContactIcon from "./icons/ContactIcon.astro";
+import SendIcon from "./icons/SendIcon.astro";
+---
+
 <section
     id="contact-section"
     class="w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-16 bg-cover bg-no-repeat bg-center bg-fixed py-16 text-white"
@@ -9,10 +14,7 @@
                 mente?</span
             >☁️
         </h1>
-        <img
-            src="public/contact/contact_01.svg"
-            alt="Imágen de receptiva a nuevos proyectos"
-        />
+        <ContactIcon class="size-80" />
     </div>
     <form action="" method="post">
         <fieldset
@@ -48,14 +50,10 @@
             </label>
             <button
                 type="submit"
-                class="w-full flex flex-row justify-center items-end gap-2 bg-blue-900 text-white border-[1px] border-transparent rounded-md py-4 px-4 transform hover:border-cyan-600 hover:shadow-xs hover:shadow-cyan-500"
+                class="w-full flex flex-row justify-center gap-2 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-xl px-5 py-2.5 text-center me-2 mb-2 leading-none"
             >
                 Enviar
-                <img
-                    src="public/contact/send-white.svg"
-                    alt="Send icon"
-                    class="max-w-4"
-                />
+                <SendIcon class="size-4" />
             </button>
         </fieldset>
     </form>
