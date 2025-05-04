@@ -16,15 +16,16 @@ import SendIcon from "./icons/SendIcon.astro";
         </h1>
         <ContactIcon class="size-80" />
     </div>
-    <form action="" method="post">
+    <form action="https://formspree.io/f/xanoowde" method="post">
         <fieldset
             class="min-w-xs flex flex-col justify-center items-start gap-4"
         >
             <label for="name" class="w-full flex flex-col gap-1">
-                <span class="font-semibold">Nombre</span>
+                <span class="font-semibold">Nombre (opcional)</span>
                 <input
                     type="text"
                     id="name"
+                    name="name"
                     placeholder="Ingresa tu nombre..."
                     class="bg-white text-gray-900 px-4 py-2 rounded-md"
                 />
@@ -34,6 +35,7 @@ import SendIcon from "./icons/SendIcon.astro";
                 <input
                     type="email"
                     id="mail"
+                    name="email"
                     placeholder="Ingresa tu email..."
                     required
                     class="bg-white text-gray-900 px-4 py-2 rounded-md"
@@ -48,6 +50,7 @@ import SendIcon from "./icons/SendIcon.astro";
                     required
                     class="bg-white text-gray-900 p-4 rounded-md"></textarea>
             </label>
+            <input type="text" name="_gotcha" style="display:none" />
             <button
                 type="submit"
                 class="w-full flex flex-row justify-center gap-2 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-xl px-5 py-2.5 text-center me-2 mb-2 leading-none"
