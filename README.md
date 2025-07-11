@@ -5,7 +5,7 @@ que domino, cómo trabajo, y los proyectos que he estado haciendo. ¡Espero que 
 
 ## 🔗 Enlaces
 
-Puedes ver el portafolio en línea aquí: [https://tuusuario.github.io/](https://sugadev.vercel.app/)
+Puedes ver el portafolio en línea aquí: [Sugadev](https://sugadev.vercel.app/)
 
 ## ✨ Características
 
