@@ -1,0 +1,68 @@
+---
+const { Technologies } = Astro.props;
+
+import HtmlIcon from "./icons/HtmlIcon.astro";
+import CssIcon from "./icons/CssIcon.astro";
+import JavascriptIcon from "./icons/JavascriptIcon.astro";
+import TypescriptIcon from "./icons/TypescriptIcon.astro";
+import TailwindcssIcon from "./icons/TailwindcssIcon.astro";
+import NextjsIcon from "./icons/NextjsIcon.astro";
+import NeonIcon from "./icons/Neon.astro";
+import NodeIcon from "./icons/NodeIcon.astro";
+import ReactIcon from "./icons/ReactIcon.astro";
+import ExpressIcon from "./icons/ExpressIcon.astro";
+import PlaywrightIcon from "./icons/PlaywrightIcon.astro";
+import ViteIcon from "./icons/ViteIcon.astro";
+import DockerIcon from "./icons/DockerIcon.astro";
+
+const technologyIcons = {
+  Html: HtmlIcon,
+  Css: CssIcon,
+  Javascript: JavascriptIcon,
+  Typescript: TypescriptIcon,
+  Nextjs: NextjsIcon,
+  Tailwindcss: TailwindcssIcon,
+  Neon: NeonIcon,
+  React: ReactIcon,
+  Node: NodeIcon,
+  Express: ExpressIcon,
+  Playwright: PlaywrightIcon,
+  Vite: ViteIcon,
+  Docker: DockerIcon,
+} as const;
+
+const technologyLinks = {
+  Html: "https://developer.mozilla.org/en-US/docs/Glossary/HTML5",
+  Css: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  Javascript: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  Typescript: "https://www.typescriptlang.org/",
+  Nextjs: "https://nextjs.org/",
+  Tailwindcss: "https://tailwindcss.com/",
+  Neon: "https://neon.com/",
+  React: "https://react.dev/",
+  Node: "https://nodejs.org/en/",
+  Express: "https://expressjs.com/",
+  Playwright: "https://playwright.dev/",
+  Vite: "https://vite.dev/",
+  Docker: "https://www.docker.com/",
+} as const;
+
+export type Technology = keyof typeof technologyIcons;
+---
+
+<div class="w-full flex flex-wrap justify-center md:justify-start gap-4">
+  {
+    Technologies.map((technology: Technology) => {
+      const TechnologyIcon = technologyIcons[technology];
+      return (
+        TechnologyIcon && (
+          <span title={technology}>
+            <a href={technologyLinks[technology]}>
+              <TechnologyIcon class="size-12 hover:scale-120 transition-transform duration-200" />
+            </a>
+          </span>
+        )
+      );
+    })
+  }
+</div>
