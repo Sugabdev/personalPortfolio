@@ -50,14 +50,19 @@ const technologyLinks = {
 export type Technology = keyof typeof technologyIcons;
 ---
 
-<div class="w-full flex flex-wrap justify-center md:justify-start gap-4">
+<div
+  class="w-full flex flex-wrap justify-center md:justify-start gap-4 backdrop-brightness-75 rounded-md p-4 shadow-lg shadow-pink-900"
+>
   {
     Technologies.map((technology: Technology) => {
       const TechnologyIcon = technologyIcons[technology];
       return (
         TechnologyIcon && (
           <span title={technology}>
-            <a href={technologyLinks[technology]}>
+            <a
+              href={technologyLinks[technology]}
+              aria-label={technologyLinks[technology]}
+            >
               <TechnologyIcon class="size-12 hover:scale-120 transition-transform duration-200" />
             </a>
           </span>

@@ -8,93 +8,85 @@ import AboutIcon from "./icons/AboutIcon.astro";
 import ContactIcon from "./icons/ContactIcon.astro";
 
 const navLinks = [
-    {
-        Text: "Inicio",
-        Icon: HomeIcon,
-        Description: "Ícono de una casa para el nav del inicio",
-        link: "#cover-section",
-    },
-    {
-        Text: "Trabajos recientes",
-        Icon: WorkIcons,
-        Description:
-            "Ícono de una computadora para el nav de Trabajos Recientes",
-        link: "#work-section",
-    },
-    {
-        Text: "Proyectos",
-        Icon: ProjectsIcon,
-        Description: "Ícono de maletín ce trabajo para el nav de proyectos",
-        link: "#projects-section",
-    },
-    {
-        Text: "Sobre mí",
-        Icon: AboutIcon,
-        Description: "Ícono de avatar para el nav de Sobre mí",
-        link: "#about-section",
-    },
-    {
-        Text: "Contácto",
-        Icon: ContactIcon,
-        Description: "Ícono de un teléfono para el nav de Contácto",
-        link: "#contact-section",
-    },
+  {
+    Text: "Inicio",
+    Icon: HomeIcon,
+    Description: "Ícono de una casa para el nav del inicio",
+    link: "#cover-section",
+  },
+  {
+    Text: "Trabajos recientes",
+    Icon: WorkIcons,
+    Description: "Ícono de una computadora para el nav de Trabajos Recientes",
+    link: "#work-section",
+  },
+  {
+    Text: "Proyectos",
+    Icon: ProjectsIcon,
+    Description: "Ícono de maletín ce trabajo para el nav de proyectos",
+    link: "#projects-section",
+  },
+  {
+    Text: "Sobre mí",
+    Icon: AboutIcon,
+    Description: "Ícono de avatar para el nav de Sobre mí",
+    link: "#about-section",
+  },
+  {
+    Text: "Contácto",
+    Icon: ContactIcon,
+    Description: "Ícono de un teléfono para el nav de Contácto",
+    link: "#contact-section",
+  },
 ];
 ---
 
 <footer
-    class="w-full flex flex-col justify-center items-center bg-cover bg-no-repeat bg-center bg-fixed text-white"
-    style="background-image: url('/background.svg')"
+  class="w-full flex flex-col justify-center items-center bg-cover bg-no-repeat bg-center bg-fixed text-white"
+  style="background-image: url('/background.svg')"
 >
-    <section class="flex flex-col items-center">
-        <nav class="border-t-[1px] border-gray-100 p-8">
-            <ul
-                class="flex flex-col md:flex-row justify-center items-center gap-8"
-            >
-                {
-                    navLinks.map(({ Text, Icon, Description, link }) => (
-                        <li class="flex flex-row gap-1 justify-center">
-                            <Icon class="size-4" />
-                            <a
-                                aria-label={Description}
-                                href={link}
-                                class="text-[1.2rem] font-semibold leading-none h-full"
-                            >
-                                {Text}
-                            </a>
-                        </li>
-                    ))
-                }
-            </ul>
-        </nav>
-        <nav class="border-t-[1px] border-gray-100 p-8">
-            <ul class="flex flex-row gap-4">
-                <li>
-                    <a
-                        aria-label="Jesús Quiñones Github profile"
-                        href="https://github.com/Sugabdev"
-                    >
-                        <GithubIcon
-                            class="size-6 hover:text-cyan-500 hover:scale-110 transition-all duration-200"
-                        />
-                    </a>
-                </li>
-                <li>
-                    <a
-                        aria-label="Jesús Quiñones LinkedIn profile"
-                        href="https://www.linkedin.com/in/sugabdev/"
-                    >
-                        <LinkedinIcon
-                            class="size-6 hover:text-cyan-500 hover:scale-110 transition-all duration-200"
-                        />
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </section>
-    <section
-        class="w-full font-semibold py-4 bg-rose-950 text-center text-lg px-4 md:px-0"
-    >
-        <p>2025 Copyright. Todos los derechos reservados.</p>
-    </section>
+  <section class="flex flex-col items-center">
+    <nav class="border-t-[1px] border-gray-100 p-8">
+      <ul class="flex flex-col md:flex-row justify-center items-center gap-8">
+        {
+          navLinks.map(({ Text, Icon, Description, link }) => (
+            <li class="flex flex-row gap-1 justify-center hover:text-shadow-lg hover:scale-120 hover:font-medium transition-all duration-200">
+              <Icon class="size-4" />
+              <a
+                aria-label={Description}
+                href={link}
+                class="text-[1.2rem] font-semibold leading-none h-full"
+              >
+                {Text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <nav class="border-t-[1px] border-gray-100 p-8">
+      <ul class="flex flex-row gap-4">
+        <li>
+          <a
+            aria-label="Jesús Quiñones Github profile"
+            href="https://github.com/Sugabdev"
+          >
+            <GithubIcon
+              class="size-6 hover:text-cyan-500 hover:scale-120 transition-all duration-200"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            aria-label="Jesús Quiñones LinkedIn profile"
+            href="https://www.linkedin.com/in/sugabdev/"
+          >
+            <LinkedinIcon
+              class="size-6 hover:text-cyan-500 hover:scale-120 transition-all duration-200"
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </section>
 </footer>

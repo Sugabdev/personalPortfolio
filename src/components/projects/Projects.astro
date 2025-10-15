@@ -13,6 +13,7 @@ const projects: Projects[] = [
     Description:
       "Aplicación que consume la API de https://rickandmortyapi.com/ y renderiza tarjetas con los datos de los personajes.",
     Technologies: ["Typescript", "Tailwindcss", "Vite", "React"],
+    Link: "https://rick-and-morty-sugabdev.vercel.app/",
   },
   {
     Screenshot: linkShortener,
@@ -20,6 +21,7 @@ const projects: Projects[] = [
     Description:
       "Aplicación full-stack que presenta un formulario para ingresar un enlace de una web cualquiera y generar un enlace corto que redirecciona a la web original.  ",
     Technologies: ["Typescript", "Tailwindcss", "Nextjs", "Neon"],
+    Link: "https://price-comparator-fe.vercel.app/",
   },
   {
     Screenshot: PriceComparator,
@@ -36,6 +38,7 @@ const projects: Projects[] = [
       "Docker",
       "Playwright",
     ],
+    Link: "https://linksu.vercel.app/",
   },
 ];
 ---
@@ -48,7 +51,7 @@ const projects: Projects[] = [
   <h1 class="text-6xl"><span class="text-4xl">📂</span> Proyectos</h1>
   <section class="grid grid-cols-1 gap-16">
     {
-      projects.map(({ Screenshot, Title, Description, Technologies }) => (
+      projects.map(({ Screenshot, Title, Description, Technologies, Link }) => (
         <article class="flex flex-col justify-between gap-4 max-w-80 md:max-w-120 md:gap-8">
           <Image class="rounded-md" src={Screenshot} alt="Project screenshot" />
           <h2 class="text-3xl text-center md:text-left">{Title}</h2>
@@ -56,12 +59,13 @@ const projects: Projects[] = [
             {Description}
           </p>
           <TechnologyIcons Technologies={Technologies} />
-          <button
-            type="button"
+          <a
+            href={Link}
+            aria-label="Enlace al proyecto"
             class="w-full text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-xl px-5 py-2.5 text-center"
           >
             ¡Más sobre este proyecto!
-          </button>
+          </a>
         </article>
       ))
     }

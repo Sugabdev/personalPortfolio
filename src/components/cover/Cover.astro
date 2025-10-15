@@ -1,71 +1,64 @@
 ---
 import { Image } from "astro:assets";
-import avatar from "../../assets/images/cover/profile_picture.jpg";
+import Code from "../../assets/images/cover/code.webp";
 import GithubIcon from "./icons/GithubIcon.astro";
 import LinkedinIcon from "./icons/LinkedinIcon.astro";
 ---
 
 <section
-    class="h-full flex flex-col justify-center items-center gap-12 text-yellow-50 md:gap-8 md:flex-1 md:flex-row md:justify-center 2xl:py-40"
+  class="h-full flex flex-col justify-center items-center gap-12 text-yellow-50 md:gap-8 md:flex-1 md:flex-row md:justify-center 2xl:py-40"
 >
-    <div
-        class="flex flex-col justify-center items-center gap-y-4 px-8 md:gap-y-10 md:items-start md:p-0"
-    >
-        <!-- Laptop/Desktop -->
-        <div class="hidden text-4xl font-semi md:flex flex-row gap-x-4">
-            <h1 class="text-orange-300">Jesús Quiñones</h1>
-            <span>|</span>
-            <h2 class="text-rose-300">Desarrollador Web</h2>
-        </div>
-        <!-- Mobile -->
-        <div class="md:hidden flex flex-col gap-4">
-            <h1 class="block text-center text-2xl font-semibold">
-                ¡Hola!👋🏻<span class="block">Soy Jesús Quiñones</span>
-            </h1>
-            <h2
-                class="block text-center text-3xl text-orange-400 font-semibold"
-            >
-                Desarrollador Web
-            </h2>
-        </div>
-        <article
-            class="text-xl text-center md:text-left md:font-normal leading-6"
-        >
-            <p>Creo aplicaciones web utilizando un stack tecnológico</p>
-            <p>
-                orientado a <span class="font-bold text-yellow-500"
-                    >javascript</span
-                > y algo de <span class="text-sky-600 font-bold">python</span>.
-            </p>
-            <p class="text-white">
-                De <span class="text-indigo-300">Lecheria</span>, <span
-                    class="text-rose-500 text-bold">Venezuela</span
-                >.
-            </p>
-        </article>
-        <nav
-            aria-label="Redes sociales"
-            class="flex flex-row items-center gap-x-6"
-        >
-            <a
-                href="https://www.linkedin.com/in/sugabdev/"
-                class="hover:scale-120 transition"
-                aria-label="Linked in logo to redirect to my linkedin profile"
-            >
-                <LinkedinIcon class="size-12 md:size-16" />
-            </a>
-            <a
-                href="https://github.com/Sugabdev"
-                class="hover:scale-120 transition"
-                aria-label="Github logo to redirect to my Github profile"
-            >
-                <GithubIcon class="size-12 md:size-16" />
-            </a>
-        </nav>
+  <div
+    class="flex flex-col justify-center items-center gap-y-4 px-8 md:gap-y-10 md:items-start md:p-0"
+  >
+    <!-- Laptop/Desktop -->
+    <div class="hidden text-4xl font-semi md:flex flex-row gap-x-4">
+      <h1 class="text-orange-300">Jesús Quiñones</h1>
+      <span>|</span>
+      <h2 class="text-rose-300">Desarrollador Web</h2>
     </div>
-    <Image
-        src={avatar}
-        alt="Jesús Quiñones"
-        class="rounded-full w-[40%] md:w-64 bg-white"
-    />
+    <!-- Mobile -->
+    <div class="md:hidden flex flex-col gap-4">
+      <h1 class="block text-center text-2xl font-semibold">
+        ¡Hola!👋🏻<span class="block">Soy Jesús Quiñones</span>
+      </h1>
+      <h2 class="block text-center text-3xl text-orange-400 font-semibold">
+        Desarrollador Web
+      </h2>
+    </div>
+    <article class="text-xl text-center md:text-left md:font-normal leading-6">
+      <p>Creo aplicaciones web utilizando un stack tecnológico</p>
+      <p>
+        orientado a <span class="font-bold text-yellow-500">javascript</span> y algo
+        de <span class="text-sky-600 font-bold">python</span>.
+      </p>
+      <p class="text-white">
+        De <span class="text-indigo-300">Lecheria</span>, <span
+          class="text-rose-500 text-bold">Venezuela</span
+        >.
+      </p>
+    </article>
+    <nav aria-label="Redes sociales" class="flex flex-row items-center gap-x-6">
+      <a
+        href="https://www.linkedin.com/in/sugabdev/"
+        class="hover:scale-120 transition"
+        aria-label="Linked in logo to redirect to my linkedin profile"
+      >
+        <LinkedinIcon class="size-12 md:size-16" />
+      </a>
+      <a
+        href="https://github.com/Sugabdev"
+        class="hover:scale-120 transition"
+        aria-label="Github logo to redirect to my Github profile"
+      >
+        <GithubIcon class="size-12 md:size-16" />
+      </a>
+    </nav>
+  </div>
+  <Image
+    src={Code}
+    alt="Imágen principal"
+    loading="eager"
+    class="rounded-md w-xs md:w-xl opacity-80 shadow-2xl shadow-pink-400"
+  />
 </section>
