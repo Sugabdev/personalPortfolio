@@ -1,12 +1,26 @@
 ---
 import { Image } from "astro:assets";
 import TechnologyIcons from "./TechnologyIcons.astro";
+import AppleClone from "../../assets/images/projects/ApplePageClone.webp";
 import RickAndMorty from "../../assets/images/projects/RickAndMorty.webp";
 import linkShortener from "../../assets/images/projects/LinkShortener.webp";
 import PriceComparator from "../../assets/images/projects/PriceComparator.webp";
 import type { Projects } from "../../types/Projects";
 
 const projects: Projects[] = [
+{
+    Screenshot: AppleClone,
+    Title: "Clon de Apple",
+    Description:
+      "Aplicación frontend responsive que replica la interfaz de la página de Apple.",
+    Technologies: [
+      "Javascript",
+      "Tailwindcss",
+      "Vite",
+      "React"
+    ],
+    Link: "https://sugabdev-apple-page-clone.vercel.app/",
+  },
   {
     Screenshot: RickAndMorty,
     Title: "Rick And Morty",
