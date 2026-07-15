@@ -1,9 +1,9 @@
-import type { Technology } from "../components/projects/TechnologyIcons.astro";
+import type { Technology } from '../components/projects/TechnologyIcons.astro'
 
 export type Projects = {
-    Screenshot: ImageMetadata;
-    Title: string;
-    Description: string;
-    Technologies: Technology[];
-    Link: string;
+    Screenshot: ImageMetadata
+    Title: string
+    Description: string
+    Technologies: Technology[]
+    Link: string
 }

@@ -1,87 +1,110 @@
 ---
-import { Image } from "astro:assets";
-import TechnologyIcons from "./TechnologyIcons.astro";
-import AppleClone from "../../assets/images/projects/ApplePageClone.webp";
-import RickAndMorty from "../../assets/images/projects/RickAndMorty.webp";
-import linkShortener from "../../assets/images/projects/LinkShortener.webp";
-import PriceComparator from "../../assets/images/projects/PriceComparator.webp";
-import type { Projects } from "../../types/Projects";
+import { Image } from 'astro:assets'
+import TechnologyIcons from './TechnologyIcons.astro'
+import AppleClone from '../../assets/images/projects/ApplePageClone.webp'
+import Chatbot from '../../assets/images/projects/Chatbot.webp'
+import RickAndMorty from '../../assets/images/projects/RickAndMorty.webp'
+import linkShortener from '../../assets/images/projects/LinkShortener.webp'
+import PriceComparator from '../../assets/images/projects/PriceComparator.webp'
+import type { Projects } from '../../types/Projects'
 
 const projects: Projects[] = [
-{
-    Screenshot: AppleClone,
-    Title: "Clon de Apple",
-    Description:
-      "Aplicación frontend responsive que replica la interfaz de la página de Apple.",
-    Technologies: [
-      "Javascript",
-      "Tailwindcss",
-      "Vite",
-      "React"
-    ],
-    Link: "https://sugabdev-apple-page-clone.vercel.app/",
-  },
-  {
-    Screenshot: RickAndMorty,
-    Title: "Rick And Morty",
-    Description:
-      "Aplicación que consume la API de https://rickandmortyapi.com/ y renderiza tarjetas con los datos de los personajes.",
-    Technologies: ["Typescript", "Tailwindcss", "Vite", "React"],
-    Link: "https://rick-and-morty-sugabdev.vercel.app/",
-  },
-  {
-    Screenshot: linkShortener,
-    Title: "Link Shortener",
-    Description:
-      "Aplicación full-stack que presenta un formulario para ingresar un enlace de una web cualquiera y generar un enlace corto que redirecciona a la web original.  ",
-    Technologies: ["Typescript", "Tailwindcss", "Nextjs", "Neon"],
-    Link: "https://price-comparator-fe.vercel.app/",
-  },
-  {
-    Screenshot: PriceComparator,
-    Title: "Comparador de precios",
-    Description:
-      "Aplicación fullstack que permite realizar una petición a un backend propio para recuperar los datos de distintos productos y mostrarlos en una interfaz que permite ordenarlos por precio.",
-    Technologies: [
-      "Typescript",
-      "Tailwindcss",
-      "Vite",
-      "React",
-      "Node",
-      "Express",
-      "Docker",
-      "Playwright",
-    ],
-    Link: "https://linksu.vercel.app/",
-  },
-];
+    {
+        Screenshot: Chatbot,
+        Title: 'Chatbot',
+        Description:
+            'Aplicación fullstack de un chatbot que utiliza modelos gratuitos de openrouter.',
+        Technologies: [
+            'Typescript',
+            'Tailwindcss',
+            'Vite',
+            'React',
+            'ReactRouter',
+            'Zustand',
+            'Python',
+            'Django',
+            'DjangoRestFramework',
+            'Supabase',
+        ],
+        Link: 'https://chatbot-v2-0.vercel.app/',
+    },
+    {
+        Screenshot: AppleClone,
+        Title: 'Clon de Apple',
+        Description:
+            'Aplicación frontend responsive que replica la interfaz de la página de Apple.',
+        Technologies: ['Javascript', 'Tailwindcss', 'Vite', 'React'],
+        Link: 'https://sugabdev-apple-page-clone.vercel.app/',
+    },
+    {
+        Screenshot: RickAndMorty,
+        Title: 'Rick And Morty',
+        Description:
+            'Aplicación que consume la API de https://rickandmortyapi.com/ y renderiza tarjetas con los datos de los personajes.',
+        Technologies: ['Typescript', 'Tailwindcss', 'Vite', 'React'],
+        Link: 'https://rick-and-morty-sugabdev.vercel.app/',
+    },
+    {
+        Screenshot: linkShortener,
+        Title: 'Link Shortener',
+        Description:
+            'Aplicación full-stack que presenta un formulario para ingresar un enlace de una web cualquiera y generar un enlace corto que redirecciona a la web original.  ',
+        Technologies: ['Typescript', 'Tailwindcss', 'Nextjs', 'Neon'],
+        Link: 'https://price-comparator-fe.vercel.app/',
+    },
+    {
+        Screenshot: PriceComparator,
+        Title: 'Comparador de precios',
+        Description:
+            'Aplicación fullstack que permite realizar una petición a un backend propio para recuperar los datos de distintos productos y mostrarlos en una interfaz que permite ordenarlos por precio.',
+        Technologies: [
+            'Typescript',
+            'Tailwindcss',
+            'Vite',
+            'React',
+            'Node',
+            'Express',
+            'Docker',
+            'Playwright',
+        ],
+        Link: 'https://linksu.vercel.app/',
+    },
+]
 ---
 
 <section
-  id="projects-section"
-  class="w-full flex flex-col items-center gap-8 bg-cover bg-no-repeat bg-center bg-fixed text-white py-16 px-8 md:px-0"
-  style="background-image: url('/background.svg')"
+    id='projects-section'
+    class='w-full flex flex-col items-center gap-8 bg-cover bg-no-repeat bg-center bg-fixed text-white py-16 px-8 md:px-0'
+    style="background-image: url('/background.svg')"
 >
-  <h1 class="text-6xl"><span class="text-4xl">📂</span> Proyectos</h1>
-  <section class="grid grid-cols-1 gap-16">
-    {
-      projects.map(({ Screenshot, Title, Description, Technologies, Link }) => (
-        <article class="flex flex-col justify-between gap-4 max-w-80 md:max-w-120 md:gap-8">
-          <Image class="rounded-md" src={Screenshot} alt="Project screenshot" />
-          <h2 class="text-3xl text-center md:text-left">{Title}</h2>
-          <p class="text-xl leading-6 text-center md:text-left">
-            {Description}
-          </p>
-          <TechnologyIcons Technologies={Technologies} />
-          <a
-            href={Link}
-            aria-label="Enlace al proyecto"
-            class="w-full text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-xl px-5 py-2.5 text-center"
-          >
-            ¡Más sobre este proyecto!
-          </a>
-        </article>
-      ))
-    }
-  </section>
+    <h1 class='text-6xl'><span class='text-4xl'>📂</span> Proyectos</h1>
+    <section class='grid grid-cols-1 gap-16'>
+        {
+            projects.map(
+                ({ Screenshot, Title, Description, Technologies, Link }) => (
+                    <article class='flex flex-col justify-between gap-4 max-w-80 md:max-w-120 md:gap-8'>
+                        <Image
+                            class='rounded-md'
+                            src={Screenshot}
+                            alt='Project screenshot'
+                        />
+                        <h2 class='text-3xl text-center md:text-left'>
+                            {Title}
+                        </h2>
+                        <p class='text-xl leading-6 text-center md:text-left'>
+                            {Description}
+                        </p>
+                        <TechnologyIcons Technologies={Technologies} />
+                        <a
+                            href={Link}
+                            aria-label='Enlace al proyecto'
+                            class='w-full text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-xl px-5 py-2.5 text-center'
+                        >
+                            ¡Más sobre este proyecto!
+                        </a>
+                    </article>
+                )
+            )
+        }
+    </section>
 </section>
